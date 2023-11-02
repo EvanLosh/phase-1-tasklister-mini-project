@@ -5,35 +5,36 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     console.log(e.target.description.value); // Why did have have to remove hyphens from the name of the form input?
 
-
-    //Controlling our elements through creation
+    //Focus on where we want to our new elements
     const li = document.getElementById('tasks');
 
+
+    //Creating both a list and button for our new submissions 
     const button = document.createElement('button')
     const task = document.createElement("li");
 
-    button.classList.add("deleteButton")
-
-
+    //Taking our form submissions and saving it to our task li element 
     task.textContent = e.target.description.value;
+
+    //Giving our button "delete" text so it looks like a delete button(s)
     button.textContent = 'delete';
 
+    //Assigning a class of "deleteButton" to the button(s)
+    button.classList.add("deleteButton")
+
+    //Appending both the task submitted and button to parent li with Id 'tasks'
     li.append(task);
     li.append(button)
 
+    //reset the form after we submit a response 
+    taskDescription.reset()
 
-
+    //Our button eventListener that removes both the task and button 
     button.addEventListener('click', (e) => {
       task.remove()
       button.remove()
     })
 
-
-    // const deleteButton = document.getElementsByClassName('deleteButton')
-
-    // deleteButton[0].addEventListener('click', (e) => {
-    //   console.log(e)
-    // })
 
   })
 });
