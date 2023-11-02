@@ -10,9 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     task.textContent = e.target.description.value;
     li.append(task);
   })
+  // Completion of deliverable 1 -^
 
-  
 
-  // Add a list element upon submit event
 
 });
